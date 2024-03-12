@@ -3,7 +3,7 @@
 <head>
   <title>EncherCloud</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=4.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
@@ -132,6 +132,21 @@
     .napisprojektowxd {
       text-align: center;
     }
+
+    /* Media queries dla urządzeń mobilnych */
+    @media only screen and (max-width: 768px) {
+      #content {
+        padding: 80px; /* Zmniejsz odstęp dla mniejszych urządzeń */
+      }
+
+      h1 {
+        font-size: 40px; /* Zmniejsz rozmiar nagłówka na mniejszych ekranach */
+      }
+
+      #projects-btn {
+        padding: 15px 30px; /* Zmniejsz rozmiar przycisku na mniejszych ekranach */
+      }
+    }
   </style>
 </head>
 <body>
@@ -162,15 +177,15 @@
       </div>
       <div class="project-wrapper">
         <div class="project-image-thecubeandventure"></div>
-        <a href="https://encherstudio.itch.io/thecubeadventure" class="project-button">Pobierz gre - TheCubeAdventure</a>
+        <a href="TheCubeAdventure.zip" class="project-button">Pobierz gre - TheCubeAdventure</a>
+      </div>
+      <div class="project-wrapper">
+        <div class="project-image-threedlasers"></div>
+        <a href="3dLasers.zip" class="project-button">Pobierz gre - 3d Lasers</a>
       </div>
       <div class="project-wrapper">
         <div class="project-image-protokolzaglady"></div>
         <a href="ProtokolZaglady.zip" class="project-button">Pobierz gre - Protokół Zagłady</a>
-      </div>
-      <div class="project-wrapper">
-        <div class="project-image-threedlasers"></div>
-        <a href="https://encherstudio.itch.io/3dlasers" class="project-button">Pobierz gre - 3d Lasers</a>
       </div>
     </div>
   </div>
