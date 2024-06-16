@@ -3,7 +3,7 @@
 <head>
   <title>EncherCloud</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.9">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
@@ -15,7 +15,7 @@
       scroll-behavior: smooth;
     }
     #top-bar {
-      background-color: rgba(34, 33, 33, 0.481);
+      background-color: rgba(34, 33, 33, 0.534);
       color: white;
       padding: 27px;
       display: flex;
@@ -28,16 +28,16 @@
       padding: 9px;
     }
     #top-bar a:hover {
-      background-color: rgb(126, 105, 199);
+      background-color: rgb(140, 117, 221);
     }
     #content {
-      background-color: rgba(0, 0, 0, 0.228); /* Dodany kolor tła z przenikliwością */
+      background-color: rgba(0, 0, 0, 0.253); /* Dodany kolor tła z przenikliwością */
       color: white;
       text-align: center;
       padding: 225px;
     }
     #projects-btn {
-      background-color: rgb(11, 89, 205);
+      background-color: rgb(13, 99, 228);
       color: white;
       padding: 18px 36px;
       border-radius: 18px;
@@ -48,7 +48,7 @@
     }
 
     #projects-btn:hover {
-      background-color: rgb(36, 117, 229);
+      background-color: rgb(40, 130, 255);
     }
 
     #projects-title {
@@ -64,7 +64,7 @@
       font-size: 14.4px;
     }
     .project-button {
-      background-color: rgb(11, 89, 205);
+      background-color: rgb(13, 99, 228);
       color: white;
       padding: 9px 9px;
       border-radius: 18px;
@@ -79,54 +79,40 @@
     }
 
     .project-wrapper {
-  background-color: black;
-  margin: 18px;
-  padding: 9px;
-  border-radius: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 360px; /* Stała wysokość czarnego kwadratu */
-}
-
+      background-color: black;
+      margin: 18px;
+      padding: 9px;
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 360px; /* Stała wysokość czarnego kwadratu */
+    }
 
     .project-button {
       margin-top: auto; /* przycisk na dole czarnego kwadratu */
     }
 
-    .project-image-encherscript {
-      background-image: url('image1.png');
+    .project-image-encherscript,
+    .project-image-thecubeandventure,
+    .project-image-threedlasers {
       background-size: cover;
       background-position: center;
       width: 90%;
       height: 63%; /* wysokość obrazka */
       border-radius: 18px 18px 0 0; /* zaokrąglenie górnego brzegu */
+    }
+
+    .project-image-encherscript {
+      background-image: url('image1.png');
     }
 
     .project-image-thecubeandventure {
       background-image: url('image2.png');
-      background-size: cover;
-      background-position: center;
-      width: 90%;
-      height: 63%; /* wysokość obrazka */
-      border-radius: 18px 18px 0 0; /* zaokrąglenie górnego brzegu */
-    }
-    .project-image-threedlasers {
-      background-image: url('image3.png');
-      background-size: cover;
-      background-position: center;
-      width: 90%;
-      height: 63%; /* wysokość obrazka */
-      border-radius: 18px 18px 0 0; /* zaokrąglenie górnego brzegu */
     }
 
-    .project-image-protokolzaglady {
-      background-image: url('image4.png');
-      background-size: cover;
-      background-position: center;
-      width: 90%;
-      height: 63%; /* wysokość obrazka */
-      border-radius: 18px 18px 0 0; /* zaokrąglenie górnego brzegu */
+    .project-image-threedlasers {
+      background-image: url('image3.png');
     }
 
     .napisprojektowxd {
@@ -134,7 +120,7 @@
     }
 
     /* Media queries dla urządzeń mobilnych */
-    @media only screen and (max-width: 691px) {
+    @media only screen and (max-width: 768px) {
       #content {
         padding: 72px; /* Zmniejsz odstęp dla mniejszych urządzeń */
       }
@@ -172,12 +158,12 @@
         <a href="EncherScriptIDE.zip" class="project-button">Pobierz jezyk programowania EncherScript</a>
       </div>
       <div class="project-wrapper">
-        <div class="project-image-thecubeandventure"></div>
-        <a href="https://encherstudio.itch.io/thecubeadventure" class="project-button">Pobierz gre - TheCubeAdventure</a>
+        <div class="project-image-threedlasers"></div>
+        <a href="https://encherstudio.itch.io/3dlasers" class="project-button">--> Pobierz gre - 3d Lasers <--</a>
       </div>
       <div class="project-wrapper">
-        <div class="project-image-threedlasers"></div>
-        <a href="https://encherstudio.itch.io/3dlasers" class="project-button">Pobierz gre 3d Lasers</a>
+        <div class="project-image-thecubeandventure"></div>
+        <a href="https://encherstudio.itch.io/thecubeadventure" class="project-button">Pobierz gre - TheCubeAdventure</a>
       </div>
     </div>
   </div>
