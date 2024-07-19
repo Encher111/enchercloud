@@ -1,177 +1,161 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <title>EncherCloud</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    #top-bar {
-      background-color: rgba(34, 33, 33, 0.534);
-      color: white;
-      padding: 27px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    #top-bar a {
-      text-decoration: none;
-      color: white;
-      padding: 9px;
-    }
-    #top-bar a:hover {
-      background-color: rgb(140, 117, 221);
-    }
-    #content {
-      background-color: rgba(0, 0, 0, 0.253); /* Dodany kolor tła z przenikliwością */
-      color: white;
-      text-align: center;
-      padding: 225px;
-    }
-    #projects-btn {
-      background-color: rgb(13, 99, 228);
-      color: white;
-      padding: 18px 36px;
-      border-radius: 18px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 36px;
-      cursor: pointer;
-    }
-
-    #projects-btn:hover {
-      background-color: rgb(40, 130, 255);
-    }
-
-    #projects-title {
-      color: white;
-      margin-top: 63vh;
-      display: block;
-      font-size: 21.6px;
-    }
-    #pustywypelniacz {
-      color: white;
-      margin-top: 45vh;
-      display: block;
-      font-size: 14.4px;
-    }
-    .project-button {
-      background-color: rgb(13, 99, 228);
-      color: white;
-      padding: 9px 9px;
-      border-radius: 18px;
-      text-decoration: none;
-      display: inline-block;
-      margin: 18px;
-    }
-    .project-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .project-wrapper {
-      background-color: black;
-      margin: 18px;
-      padding: 9px;
-      border-radius: 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 360px; /* Stała wysokość czarnego kwadratu */
-    }
-
-    .project-button {
-      margin-top: auto; /* przycisk na dole czarnego kwadratu */
-    }
-
-    .project-image-encherscript,
-    .project-image-thecubeandventure,
-    .project-image-threedlasers {
-      background-size: cover;
-      background-position: center;
-      width: 90%;
-      height: 63%; /* wysokość obrazka */
-      border-radius: 18px 18px 0 0; /* zaokrąglenie górnego brzegu */
-    }
-
-    .project-image-encherscript {
-      background-image: url('image1.png');
-    }
-
-    .project-image-thecubeandventure {
-      background-image: url('image2.png');
-    }
-
-    .project-image-threedlasers {
-      background-image: url('image3.png');
-    }
-
-    .napisprojektowxd {
-      text-align: center;
-    }
-
-    /* Media queries dla urządzeń mobilnych */
-    @media only screen and (max-width: 768px) {
-      #content {
-        padding: 72px; /* Zmniejsz odstęp dla mniejszych urządzeń */
-      }
-
-      #projects-btn {
-        padding: 13.5px 27px; /* Zmniejsz rozmiar przycisku na mniejszych ekranach */
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witaj w EncherCloud</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .navbar {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar h1 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 1.5em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        .navbar .buttons {
+            display: flex;
+        }
+        .navbar .buttons a {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #6200ea;
+            color: #ffffff;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .navbar .buttons a:hover {
+            background-color: #3700b3;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            margin-top: 120px;
+            background: rgba(0, 0, 0, 0.5); /* Slightly opaque background for readability */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .container h1 {
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        .container h2 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            color: #bbbbbb;
+        }
+        .container h3 {
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            color: #bbbbbb;
+        }
+        .project {
+            background-color: #1e1e1e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .project-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .project h2 {
+            margin: 0 0 10px;
+        }
+        .project p {
+            margin: 0 0 20px;
+            color: #aaaaaa;
+        }
+        .download-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #6200ea;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #3700b3;
+        }
+    </style>
 </head>
 <body>
-  <div id="top-bar">
-    <div>
-      <a href="#" id="home-btn">EncherCloud</a>
+    <div class="navbar">
+        <h1>EncherCloud</h1>
+        <div class="buttons">
+            <a href="https://www.youtube.com">YouTube</a>
+            <a href="https://www.tiktok.com">TikTok</a>
+        </div>
     </div>
-    <div>
-      <a href="https://www.youtube.com/channel/UCx9W4A3DYe1s6jdzm8gu06g" id="youtube-link">Youtube</a>
-      <a href="https://www.tiktok.com/@.black_hat111" id="tiktok-link">Tiktok</a>
+    <div class="container">
+        <h1>Witaj w EncherCloud</h1>
+        <h2>Na tej stronie możesz pobrać moje wszystkie projekty</h2>
+        <h3>*wszystkie projekty zostały stworzone przez Bartosza Świąteckiego (firma Encher)</h3>
+        
+        <div class="project">
+            <div class="project-content">
+                <h2>Gra 3d Lasers</h2>
+                <p>Moja najnowsza i najlepsza gra, w której by przejść do kolejnego poziomu musisz rozwiązywać łamigówki z laserami</p>
+                <a href="https://encherstudio.itch.io/3dlasers" class="download-btn">Pobierz gre 3d Lasers</a>
+            </div>
+        </div>
+        
+        <div class="project">
+            <div class="project-content">
+                <h2>Gra TheCubeAdventure</h2>
+                <p>To moja pierwsza gra, więc proszę nie oczekiwać od niej zbyt wiele. Jest to prosta i przyjemna platformówka w której przemierzysz kilka różnych światów, będąc jednocześnie kostką</p>
+                <a href="https://encherstudio.itch.io/thecubeadventure" class="download-btn">Pobierz gre TheCubeAdventure</a>
+            </div>
+        </div>
+        
+        <div class="project">
+            <div class="project-content">
+                <h2>Język programowania EncherScript</h2>
+                <p>Jest to mój własny interpretowany język programowania. Język jest przedewszystkim prosty i z dużymi możliwościami, dostępna jest obszerna dokumentacja na jego temat</p>
+                <a href="EncherScriptIDE.zip" class="download-btn">Pobierz pliki jezyka programowania EncherScript</a>
+            </div>
+        </div>
+        
     </div>
-  </div>
-
-  <div id="content">
-    <h1 style="font-size: 45px;">Witaj w EncherCloud!</h1>
-    <p style="font-size: 27px;">Na tej stronie znajdziesz wszystkie moje projekty, gry, i programy!</p>
-    <a href="#projects-title" id="projects-btn">Zobacz moje projekty</a>
-  </div>
-
-  <div id="projects-title">
-    <div class="napisprojektowxd">
-        <h2>Projekty: </h2>
-    </div>
-    <div class="project-container">
-      <div class="project-wrapper">
-        <div class="project-image-encherscript"></div>
-        <a href="EncherScriptIDE.zip" class="project-button">Pobierz jezyk programowania EncherScript</a>
-      </div>
-      <div class="project-wrapper">
-        <div class="project-image-threedlasers"></div>
-        <a href="https://encherstudio.itch.io/3dlasers" class="project-button">--> Pobierz gre - 3d Lasers <--</a>
-      </div>
-      <div class="project-wrapper">
-        <div class="project-image-thecubeandventure"></div>
-        <a href="https://encherstudio.itch.io/thecubeadventure" class="project-button">Pobierz gre - TheCubeAdventure</a>
-      </div>
-    </div>
-  </div>
-  <div id="pustywypelniacz">
-    <p>Strona i wszystkie projekty zostały stworzone przez Bartosza Świąteckiego (firma Encher).</p>
-  </div>
-  <div id="doprzewiniecia">
-
-  </div>
 </body>
 </html>
