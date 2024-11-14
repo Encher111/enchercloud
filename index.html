@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    <script>
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const encherLang = getCookie('encherlang');
+
+            if (!encherLang) {
+                setCookie('encherlang', 'polish', 365);
+            } 
+
+            else if (encherLang === 'english' && window.location.href.indexOf("english.html") === -1) {
+                window.location.href = "english.html";
+            }
+        });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="HbZqUg-nzIKN6b1jA7I9sp2JdPltRbPD4dhn1uoFTNc" />
-    <title>Encher</title>
+    <title>Witaj w EncherCloud</title>
     <style>
         body {
             margin: 0;
@@ -14,8 +38,7 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            background: url('background.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background: linear-gradient(145deg, #4e4e53, #8e8e96, #4e4f67, #5e5e73, #3d3d47);
         }
         .navbar {
             width: 100%;
@@ -38,25 +61,32 @@
         }
         .navbar .buttons {
             display: flex;
+            align-items: center;
         }
-        .navbar .buttons a {
-            margin-left: 10px;
-            padding: 10px 20px;
-            border-radius: 5px;
+        select {
             background-color: #6200ea;
-            color: #ffffff;
-            text-decoration: none;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
             transition: background-color 0.3s;
         }
-        .navbar .buttons a:hover {
+        select:hover {
             background-color: #3700b3;
+        }
+        select option {
+            padding: 10px;
         }
         .container {
             width: 90%;
             max-width: 800px;
             text-align: center;
             margin-top: 120px;
-            background: rgba(0, 0, 0, 0.5); /* Slightly opaque background for readability */
+            background: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -118,29 +148,17 @@
         .download-btn:hover {
             background-color: #3700b3;
         }
-        @media (max-width: 600px) {
-            .container {
-                margin-top: 100px;
-                padding: 10px;
-            }
-            .container h1 {
-                font-size: 2em;
-            }
-            .container h2 {
-                font-size: 1.2em;
-            }
-            .container h3 {
-                font-size: 1em;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="navbar">
         <h1>Encher</h1>
         <div class="buttons">
-            <a href="https://www.youtube.com/@encherstudio">YouTube</a>
-            <a href="https://www.tiktok.com/@.black_hat111">TikTok</a>
+            <span style="margin-right: 8px;">Język/Language:</span>
+            <select id="language-select" onchange="changeLanguage(this.value)">
+                <option value="index.html" selected>Polski</option>
+                <option value="english.html">English</option>
+            </select>
         </div>
     </div>
     <div class="container">
@@ -148,7 +166,7 @@
         <h2>Na tej stronie możesz pobrać moje wszystkie projekty</h2>
         <h3>*wszystkie projekty zostały stworzone przez Bartosza Świąteckiego (firma Encher)</h3>
         <h3>[!] MOJE PROJEKTY DZIALAJA TYLKO NA SYSTEMIE OPERACYJNYM WINDOWS! [!]</h3>
-        
+
         <div class="project">
             <div class="project-content">
                 <h2>Gra 3d Lasers</h2>
@@ -156,7 +174,7 @@
                 <a href="https://encherstudio.itch.io/3dlasers" class="download-btn">Pobierz gre 3d Lasers</a>
             </div>
         </div>
-        
+
         <div class="project">
             <div class="project-content">
                 <h2>Język programowania EncherScript</h2>
@@ -164,7 +182,15 @@
                 <a href="EncherScriptIDE.zip" class="download-btn">Pobierz pliki jezyka programowania EncherScript</a>
             </div>
         </div>
-        
+
     </div>
+
+    <script>
+        function changeLanguage(languagePage) {
+            const language = languagePage === "english.html" ? "english" : "polish";
+            setCookie("encherlang", language, 365);
+            location.href = languagePage;
+        }
+    </script>
 </body>
 </html>
