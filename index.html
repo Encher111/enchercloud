@@ -413,6 +413,19 @@
         </div>
     </div>
     <script>
+        function getCookie(name) {
+            let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+            if (match) return match[2];
+            return null;
+        }
+        let jezykencherValue = getCookie('jezykencher');
+
+        if (jezykencherValue === '0') {
+            changeLanguageToPolish();
+        } else if (jezykencherValue === '1') {
+            changeLanguageToEnglish();
+        }
+
         function openModal() {
             document.getElementById('myModal').style.display = 'block';
         }
@@ -423,6 +436,7 @@
 
         function changeLanguageToPolish()
         {
+            document.cookie = "jezykencher=0; path=/; expires=" + new Date(9999, 0, 1).toUTCString();
             document.querySelector('.hero h1 span:nth-of-type(1)').innerText = 'Witaj';
             document.querySelector('.hero h1 span:nth-of-type(2)').innerText = 'Na stronie';
             document.querySelector('.hero h1 span:nth-of-type(3)').innerText = 'Encher';
@@ -442,8 +456,9 @@
 
         function changeLanguageToEnglish()
         {
-            document.querySelector('.hero h1 span:nth-of-type(1)').innerText = 'Hello';
-            document.querySelector('.hero h1 span:nth-of-type(2)').innerText = 'On the Website';
+            document.cookie = "jezykencher=1; path=/; expires=" + new Date(9999, 0, 1).toUTCString();
+            document.querySelector('.hero h1 span:nth-of-type(1)').innerText = 'Welcome';
+            document.querySelector('.hero h1 span:nth-of-type(2)').innerText = 'On the Website of';
             document.querySelector('.hero h1 span:nth-of-type(3)').innerText = 'Encher';
             document.querySelector('.hero p').innerText = 'All projects were created by Bartosz Świątecki (Encher company)';
             document.querySelector('.hero .fancy-btn').innerText = 'SEE MY PROJECTS';
@@ -452,7 +467,7 @@
             document.querySelector('.project-item:nth-of-type(1) .project-title').innerText = 'EncherScript Programming Language';
             document.querySelector('.project-item:nth-of-type(1) .project-description').innerText = 'EncherScript is a programming language that is very simple, efficient, user-friendly, and offers great possibilities!';
             document.querySelector('.project-item:nth-of-type(1) .project-btn').innerText = 'Download';
-            document.querySelector('.project-item:nth-of-type(2) .project-title').innerText = '3D Game Lasers';
+            document.querySelector('.project-item:nth-of-type(2) .project-title').innerText = '3dLasers Game';
             document.querySelector('.project-item:nth-of-type(2) .project-description').innerText = 'A logic game where you arrange lasers in the correct way';
             document.querySelector('.project-item:nth-of-type(2) .project-btn').innerText = 'Download';
             document.querySelector('.footer p').innerHTML = '&copy; Bartosz Świątecki, Encher. All rights reserved';
